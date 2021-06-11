@@ -1,0 +1,768 @@
+extends ../layouts/default
+
+block content
+  .intro
+    H1(style="text-align:center") FAQ gestion privée
+    .search
+      span.datalist-arrow
+      input(type="search" list="slist" placeholder="Tapez votre question")
+      datalist#slist
+        option Qu'est ce que l'indicateur de risque ?
+        option Pourquoi investir chez Carmignac plutôt qu'avec un autre acteur ?
+        option Est-ce que je peux récupérer mes capitaux, tout ou partie ?
+        option Y a-t'il un bon moment pour investir ?
+        option Quels sont vos différents frais ?
+    .boxes
+      .box
+        h2 Questions générales
+        .q Qu'est ce que l'indicateur de risque ?
+        .q C'est quoi l'investissement responsable (ISR) ?
+        .q Que signifie YTD ?
+        .see-all Voir toutes les questions
+      .box
+        h2 Carmignac & la gestion privée
+        .q Pourquoi investir chez Carmignac plutôt qu'avec un autre acteur ?
+        .q Quels avantages ont les marchés financiers par rapport à l'immobilier?
+        .q votre gestion via des fonds est un peu opaque; comment savoir dans quoi vous êtes investis concrètement ?
+        .see-all Voir toutes les questions
+      .box
+        h2 Être client gestion privée
+        .q Est-ce que je peux récupérer mes capitaux, tout ou partie ?
+        .q Comment me tenez vous informé des opportunités ou des risques sur mon portefeuille ?
+        .q Comment puis-je suivre l'évolution de mon portefeuille ?
+        .see-all Voir toutes les questions
+      .box
+        h2 Risques & performances
+        .q Y a-t'il un bon moment pour investir ?
+        .q Quelles sont les sécurités sur les actifs que je vous confie ?
+        .q Combien puis-je espérer gagner ?
+        .see-all Voir toutes les questions
+      .box
+        h2 Frais & fiscalité
+        .q Quels sont vos différents frais ?
+        .q Puis-je investir au Luxembourg, est-ce plus intéressant fiscalement ?
+        .q Quelles sont les différentes enveloppes et leur fiscalité ?
+        .see-all Voir toutes les questions
+  .content
+    .questionsbar
+      .tab 
+        input#_1(type="radio" name="side")
+        label(for="_1") Questions générales
+        .tab-content
+          .q Qu'est ce que l'indicateur de risque ?
+          .q C'est quoi l'investissement responsable (ISR) ?
+          .q Que signifie YTD ?
+          .q Qu'est ce que l'horizon minimum d'investissement recommandé ?
+          .q Qu'est ce que la valeur liquidative (VL) ?
+          .q Que veux-dire SICAV/ Portfolio ?
+          .q C'est quoi un compte titres ?
+          .q Qu'est-ce qu'une part, quelles sont leurs différences ?
+
+      .tab 
+        input#_2(type="radio" name="side")
+        label(for="_2") Carmignac & la gestion privée
+        .tab-content
+          .q Pourquoi investir chez Carmignac plutôt qu'avec un autre acteur ?
+          .q Quels avantages ont les marchés financiers par rapport à l'immobilier?
+          .q votre gestion via des fonds est un peu opaque; comment savoir dans quoi vous êtes investis concrètement ?
+          .q pourquoi pensez-vous qu'une gestion OPCVM est meilleure qu'une gestion en titres vifs ?
+          .q Puis-je investir sur des produits autres que vos fonds ?
+          .q Avez-vous des fonds socialement et éthiquement responsable ?
+          .q L'ISR semble être une thématique prépondérante chez Carmignac ; en quoi vous différenciez-vous par rapport à vos concurrents ?
+          .q Comment faites vous pour investir nos liquidités lorsque on vous confie nos fonds ?
+          .q Pourquoi investir dans une assurance vie ?
+          .q Comment résumeriez-vous Carmignac en quelques mots ?
+          .q Quelle différence y a t il entre la gestion libre et la gestion accompagnée?
+          .q Pouvez vous m'accompagner sur des problématiques fiscales ?
+          .q avez- vous des produits à capital garanti?
+          .q quel est votre partenaire assurance?
+          .q Avez-vous des fonds éligibles au PEA ? Si oui, lesquels ?
+          .q Êtes-vous présents en province et à l'étranger ?
+
+      .tab 
+        input#_3(type="radio" name="side")
+        label(for="_3") Être client gestion privée
+        .tab-content
+          .q Est-ce que je peux récupérer mes capitaux, tout ou partie ?
+          .q Comment me tenez vous informé des opportunités ou des risques sur mon portefeuille ?
+          .q Comment puis-je suivre l'évolution de mon portefeuille ?
+          .q Comment accompagnez vous vos clients au quotidien ? Ai-je un interlocuteur personnalisé ou s'agit il d'une plateforme?
+          .q Comment se passe le process  d'onboarding ?
+          .q Comment faites-vous la sélection de fonds pour mon profil ?
+          .q Prenez-vous en charge la gestion de mon portefeuille?
+          .q Puis-je dégager une rente ?
+          .q Quelle réactivité si je veux changer de profil ?
+
+      .tab 
+        input#_4(type="radio" name="side")
+        label(for="_4") Risques & performances
+        .tab-content
+          .q Y a-t'il un bon moment pour investir ?
+          .q Quelles sont les sécurités sur les actifs que je vous confie ?
+          .q Combien puis-je espérer gagner ?
+          .q Offrez-vous des solutions à capital garanti ?
+          .q Quelle est la réactivité de Carmignac par rapport à la fluctuation des marchés ?
+          .q Suis-je informé si il y a un problème sur les marchés ?
+
+      .tab 
+        input#_5(type="radio" name="side")
+        label(for="_5") Frais & fiscalité
+        .tab-content
+          .q Quels sont vos différents frais ?
+          .q Puis-je investir au Luxembourg, est-ce plus intéressant fiscalement ?
+          .q Quelles sont les différentes enveloppes et leur fiscalité ?
+          .q Comment êtes-vous rémunérés ?
+          .q Pourquoi prenez vous des commissions de performance sous mandat alors qu'il y en a déjà dans vos fonds ?
+          .q C'est quoi le prélèvement forfaitaire unique (PFU/flat tax) ?
+
+
+    .content-content
+      .gr1
+        h2 Questions générales
+        .tab
+          input#q1(type="radio" name="questions")
+          label(for="q1") Qu'est ce que l'indicateur de risque ?
+          .tab-content
+            p Sit enim aliquip mollit irure sunt consequat enim non labore consectetur do aliqua voluptate nulla nulla veniam aliqua sed magna voluptate id tempor proident magna sit do excepteur laborum ex mollit veniam adipisicing excepteur minim sint quis labore ex mollit non magna cillum cupidatat ut cillum amet culpa eiusmod dolor amet sed exercitation sit occaecat esse est incididunt in velit ea nisi do consequat sint eu labore sunt magna id et minim ex magna eiusmod dolore eu commodo velit sit consequat consectetur cupidatat mollit sunt reprehenderit culpa culpa ut pariatur ea tempor veniam nisi velit ad eiusmod anim id velit do anim et irure cupidatat aliquip ex dolore dolor irure pariatur ea sit dolor aute do qui irure deserunt nulla ea in occaecat laboris commodo nulla velit sed in veniam in magna laboris do eiusmod enim dolore quis occaecat aliqua aute laborum ad est laboris consequat mollit amet ut reprehenderit laborum voluptate anim elit duis proident eiusmod amet ut officia ut sed ea aute est velit velit in et enim do tempor exercitation elit ut in anim deserunt do culpa non commodo laborum amet mollit dolore.
+            .relatives
+              h3 Questions relatives
+              .qtag Ut reprehenderit voluptate
+              .qtag Enim dolor dolore
+              .qtag Aute culpa nisi minim
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q2(type="radio" name="questions")
+          label(for="q2") C'est quoi l'investissement responsable (ISR) ?
+          .tab-content
+            p Lorem ipsum mollit est aute aliqua ut excepteur consequat anim dolore cillum excepteur est officia sunt mollit amet eiusmod minim irure ullamco incididunt adipisicing aliqua est labore dolor officia sunt qui commodo officia nostrud duis magna qui occaecat aliquip cillum mollit pariatur in fugiat nisi in pariatur pariatur esse aliqua duis anim sint reprehenderit laboris adipisicing consequat mollit labore pariatur excepteur minim esse dolore et elit dolor ad in est eiusmod id tempor veniam laborum do deserunt ad enim ad exercitation nostrud quis duis ut cupidatat magna cupidatat reprehenderit laboris ut anim adipisicing sunt nisi pariatur laboris esse irure laboris ut eiusmod culpa velit et dolore velit dolor sed id laboris eiusmod quis in nisi sit laborum consequat laboris in labore sit pariatur elit cillum consequat sunt consectetur est veniam qui sit sunt fugiat incididunt sunt dolore incididunt eiusmod nulla ad consectetur culpa reprehenderit duis esse consectetur occaecat ut id mollit cupidatat laboris aute nostrud id pariatur non irure non deserunt reprehenderit occaecat dolor consectetur irure pariatur ad et nisi proident voluptate nulla sit veniam pariatur sed fugiat id laborum incididunt elit anim anim dolore reprehenderit amet anim id esse veniam ex dolore duis ut do exercitation consectetur cupidatat veniam labore nulla duis veniam excepteur ad laborum aute pariatur proident sint quis fugiat commodo excepteur qui anim cillum qui labore proident commodo eiusmod aute.
+            .relatives
+              h3 Questions relatives
+              .qtag Sit in sit
+              .qtag In in ut non in
+              .qtag Eiusmod ut officia tempor qui
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q3(type="radio" name="questions")
+          label(for="q3") Que signifie YTD ?
+          .tab-content
+            p Voluptate consequat consequat sunt consectetur deserunt nulla dolor occaecat laboris occaecat commodo ut nisi non in labore officia in excepteur in consequat veniam ut velit officia incididunt incididunt duis sed culpa eiusmod cillum dolore quis nostrud ea duis commodo irure velit aliqua anim aliquip anim in incididunt in sed veniam proident velit occaecat aliqua tempor laboris eiusmod exercitation aute nulla dolor consequat nulla fugiat ex in sint pariatur in enim quis aliquip labore esse esse minim ut velit labore ullamco exercitation ea aliquip dolor duis nulla incididunt enim amet exercitation adipisicing proident tempor pariatur in consectetur dolor sunt elit exercitation excepteur incididunt aute nostrud qui nisi do nulla voluptate incididunt sunt irure consectetur excepteur do amet labore adipisicing ad ea et et dolore et deserunt eu in laborum non veniam adipisicing consequat officia dolore ut dolor esse eu irure veniam nostrud sunt mollit esse nostrud ex aute minim sed cupidatat non veniam est nostrud est ex dolor.
+            .relatives
+              h3 Questions relatives
+              .qtag Eiusmod amet consequat
+              .qtag Dolore id mollit incididunt
+              .qtag Commodo veniam in
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q4(type="radio" name="questions")
+          label(for="q4") Qu'est ce que l'horizon minimum d'investissement recommandé ?
+          .tab-content
+            p Sit nostrud est fugiat amet pariatur veniam voluptate non minim consectetur id consectetur pariatur excepteur ex incididunt consectetur eu eiusmod qui esse quis consequat veniam ex irure eiusmod voluptate sunt culpa eiusmod sed cillum esse occaecat id mollit qui aliqua ut velit ullamco duis consectetur nulla in proident consectetur occaecat reprehenderit fugiat aliquip magna ea dolore commodo est reprehenderit cillum nulla commodo sint qui aliqua anim duis sint proident do ut ut dolore est proident tempor et ut enim excepteur non voluptate do in cillum aliquip anim dolore dolor cupidatat irure eu ullamco commodo aute ut eu culpa nostrud voluptate sed irure ea dolore magna culpa quis aute sed velit sit nulla est nisi veniam excepteur anim elit id in ad do consequat veniam dolor magna aliqua in duis laboris adipisicing excepteur cupidatat elit sunt consequat tempor dolore dolore deserunt deserunt consectetur eiusmod excepteur reprehenderit pariatur consectetur adipisicing enim sed tempor id dolor consequat exercitation adipisicing est ut quis minim excepteur cillum in sed deserunt laborum eu laboris in adipisicing aute sit aliqua in est anim commodo ex quis in officia veniam voluptate adipisicing dolore reprehenderit amet aute sed culpa dolore ad aute exercitation exercitation magna velit dolor in dolore quis consequat irure ut incididunt amet elit laboris consectetur elit pariatur magna id.
+            .relatives
+              h3 Questions relatives
+              .qtag Do sed laborum aliquip ut
+              .qtag Proident velit
+              .qtag Nostrud pariatur occaecat
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q5(type="radio" name="questions")
+          label(for="q5") Qu'est ce que la valeur liquidative (VL) ?
+          .tab-content
+            p Cillum dolor officia reprehenderit amet eiusmod incididunt eu ut in proident anim et adipisicing fugiat ullamco aliquip est est irure reprehenderit id aute ullamco ad labore reprehenderit fugiat aute aute eiusmod velit ad eu mollit commodo in qui ut culpa id tempor cillum excepteur eu elit ex exercitation dolor in ut ea consectetur culpa exercitation eu magna ex tempor aliqua qui nostrud ea ex ut minim occaecat sint in do laborum exercitation culpa quis elit deserunt aliquip occaecat ex ex consectetur dolore dolore laborum consequat officia amet cillum et dolor excepteur exercitation eu duis sit elit sed reprehenderit ullamco culpa ad esse qui proident minim cupidatat sint officia minim deserunt culpa dolor commodo culpa quis esse duis dolor do dolor consectetur dolore dolore dolore deserunt ut tempor cillum quis magna exercitation magna sunt quis ut labore dolore officia ut do ex officia ex in commodo nisi nulla sed excepteur cillum excepteur aliquip cillum dolore ex in tempor sunt anim sed in sed fugiat reprehenderit nostrud ut do velit adipisicing sit eiusmod sed laborum in et exercitation dolor sunt nisi sunt commodo nisi fugiat velit sunt elit nostrud ad do qui consequat mollit duis sint laborum laborum ad sunt exercitation occaecat qui est nostrud consectetur magna sit adipisicing deserunt in pariatur officia velit.
+            .relatives
+              h3 Questions relatives
+              .qtag Anim eu
+              .qtag Lorem ipsum velit consequat culpa
+              .qtag Adipisicing deserunt cillum minim tempor
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q6(type="radio" name="questions")
+          label(for="q6") Que veux-dire SICAV/ Portfolio ?
+          .tab-content
+            p Duis in non duis nostrud id ex officia dolor anim irure irure ut consectetur labore est consequat qui amet ad eu nisi proident laboris in duis incididunt excepteur aliquip exercitation est eu sed commodo sint adipisicing do non ut sunt ut enim adipisicing ut cillum est ut tempor dolore exercitation magna do amet culpa duis eu quis laborum deserunt eu culpa magna incididunt in cillum culpa excepteur deserunt deserunt duis minim est do culpa fugiat reprehenderit et aliqua excepteur sunt adipisicing sint velit in fugiat nostrud ut id magna dolor ut est enim commodo fugiat labore pariatur nulla laborum eiusmod dolore deserunt cillum veniam culpa ut irure labore non tempor dolore adipisicing incididunt mollit sunt laboris consequat non est do occaecat ut aliquip tempor tempor nisi in ex et ea in fugiat ad fugiat amet cupidatat sed quis ullamco elit aute in enim cupidatat sit.
+            .relatives
+              h3 Questions relatives
+              .qtag Non consequat
+              .qtag Proident dolore nostrud
+              .qtag Dolor occaecat laborum
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q7(type="radio" name="questions")
+          label(for="q7") C'est quoi un compte titres ?
+          .tab-content
+            p Lorem ipsum in ut culpa aute velit occaecat nisi proident cillum amet cupidatat mollit velit dolor ut dolore in tempor cupidatat laborum exercitation tempor sunt voluptate ut cillum adipisicing consectetur fugiat voluptate eiusmod excepteur mollit dolor voluptate veniam minim quis anim dolor sit laboris ad sed nulla sit aliquip in eiusmod eiusmod sint ut sint excepteur dolore dolor magna labore ut aliquip excepteur fugiat irure quis occaecat ullamco nostrud cillum aute dolor ex dolor labore voluptate dolore pariatur nisi dolore duis nostrud pariatur dolor quis dolor nostrud pariatur aliquip esse tempor et labore reprehenderit ea deserunt anim nulla id ut cillum in in duis pariatur ut nulla pariatur id eiusmod magna aliquip sint ullamco culpa anim et amet sunt ea cupidatat ex et aliquip magna ullamco mollit in veniam non dolore aliquip et sit dolore cillum pariatur reprehenderit in in sit ut sit ut commodo officia et anim dolor exercitation esse sed exercitation ut in adipisicing amet in in velit ea est adipisicing eiusmod officia sint proident consectetur proident reprehenderit aliqua laboris tempor nostrud do amet voluptate ad veniam nisi ut cupidatat tempor magna id dolore cupidatat exercitation in proident dolore sed eu elit ut cillum commodo deserunt eiusmod exercitation nulla id ad irure cupidatat eu aliqua esse officia aliquip id tempor in eiusmod aliqua nostrud do non voluptate in laboris sint labore ullamco sint proident dolor voluptate in amet quis in occaecat sit consectetur do nulla officia ut dolore dolore irure nostrud officia anim ad.
+            .relatives
+              h3 Questions relatives
+              .qtag Enim cillum voluptate
+              .qtag Lorem ipsum dolor ullamco reprehenderit et pariatur
+              .qtag Exercitation aute elit cillum dolore
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q8(type="radio" name="questions")
+          label(for="q8") Qu'est-ce qu'une part, quelles sont leurs différences ?
+          .tab-content
+            p Mollit nostrud aliquip qui mollit cillum nisi laboris minim elit officia amet commodo ut adipisicing velit ut ex deserunt est deserunt excepteur commodo minim eiusmod veniam sed pariatur anim nulla dolor adipisicing ea ad occaecat nostrud dolore enim ex non sit do esse aliqua et id irure anim nostrud enim velit est ullamco irure irure sit tempor dolore sed irure consectetur dolore deserunt irure elit ex fugiat pariatur sed aute in dolore aliqua sit ea duis reprehenderit ut amet culpa labore sit ea veniam aliquip ut ut veniam consectetur commodo deserunt fugiat id aute qui ut sit culpa consequat cillum sint enim et in eu nisi exercitation aliqua dolor sint commodo ea ut occaecat duis dolor eu cillum non in qui non sint et non laboris pariatur ut officia in veniam nulla.
+            .relatives
+              h3 Questions relatives
+              .qtag Sint voluptate in ea aute
+              .qtag Qui esse velit
+              .qtag Reprehenderit nisi
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+
+      .gr2 
+        h2 Carmignac & la gestion privée
+        
+        .tab
+          input#q9(type="radio" name="questions")
+          label(for="q9") Pourquoi investir chez Carmignac plutôt qu'avec un autre acteur ?
+          .tab-content
+            p Ad velit ut voluptate culpa dolor in ad fugiat mollit amet qui ullamco deserunt sunt elit labore do ut sunt ea ullamco adipisicing incididunt dolore commodo nostrud magna sit occaecat eiusmod tempor do labore in amet in dolore nostrud in in reprehenderit aute veniam sed cupidatat incididunt commodo dolore qui sed exercitation exercitation ex enim officia sit dolore nostrud magna elit nostrud sed labore eu id mollit dolor aliquip ut culpa elit sed dolor incididunt eiusmod anim labore nisi incididunt minim aliquip reprehenderit quis est irure mollit duis magna dolore sint elit commodo excepteur officia aliquip fugiat quis voluptate ut officia amet id labore veniam nisi id fugiat ea sed ut duis ad nulla ullamco dolor adipisicing amet fugiat velit est elit nulla cillum nostrud dolor consequat quis velit exercitation tempor dolor duis ex irure dolor dolor nostrud cupidatat mollit id magna dolore irure ullamco proident culpa esse laboris et non eiusmod adipisicing est in et incididunt dolore et in ut elit labore est non qui id elit enim consectetur ea esse consequat amet mollit laborum adipisicing qui sunt eu dolore mollit labore mollit nostrud mollit dolore in consequat tempor magna sed eu voluptate sed commodo tempor.
+            .relatives
+              h3 Questions relatives
+              .qtag Magna sit ad
+              .qtag Nostrud incididunt proident
+              .qtag Deserunt exercitation adipisicing ut do
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q10(type="radio" name="questions")
+          label(for="q10") Quels avantages ont les marchés financiers par rapport à l'immobilier?
+          .tab-content
+            p Nisi tempor in consectetur irure eiusmod duis consectetur consequat officia deserunt dolore dolor in aute in qui laboris sunt excepteur in dolore irure eiusmod aliqua magna irure non non amet ut ex sunt nisi anim in veniam exercitation officia esse ea aliquip id dolor culpa exercitation fugiat id nisi laboris ad voluptate esse mollit velit ullamco incididunt ullamco dolor ut amet dolore cillum ex irure exercitation aliquip culpa consequat incididunt sed dolore anim eiusmod consequat et veniam consequat quis exercitation anim nostrud reprehenderit non et proident pariatur aute veniam do excepteur minim exercitation enim minim laborum do dolor in laborum mollit consequat nostrud cupidatat incididunt cillum pariatur magna esse laborum cupidatat in qui et ut in duis mollit labore ad voluptate sit qui deserunt sed voluptate ut sed minim et culpa minim culpa pariatur ex dolor dolore est aliqua adipisicing dolore occaecat ut laboris laboris incididunt irure cillum commodo anim irure ad esse aliqua minim deserunt pariatur amet enim dolor dolore tempor cupidatat ea velit incididunt cillum aute nulla aliqua aliqua velit sint dolor et eu id ullamco commodo deserunt nostrud nisi fugiat fugiat velit laborum cillum ut occaecat tempor officia dolore cillum sunt minim labore laborum commodo in occaecat dolor aliquip in labore occaecat irure magna et magna excepteur veniam ut ut veniam incididunt ut id adipisicing aliqua laborum cillum aute reprehenderit incididunt irure nisi eu sed qui.
+            .relatives
+              h3 Questions relatives
+              .qtag Veniam do irure
+              .qtag Dolor occaecat incididunt minim magna
+              .qtag Dolore anim minim excepteur consequat
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q11(type="radio" name="questions")
+          label(for="q11") votre gestion via des fonds est un peu opaque; comment savoir dans quoi vous êtes investis concrètement ?
+          .tab-content
+            p Incididunt aliqua adipisicing id duis officia officia elit ex incididunt non eiusmod labore exercitation ea pariatur voluptate est dolore quis deserunt voluptate duis nostrud ut dolore consectetur dolor ex laboris dolor pariatur dolore magna laborum laborum consectetur duis dolor ad in laboris excepteur pariatur sint velit eu nostrud in in aute officia velit laboris tempor consequat ex id id adipisicing adipisicing culpa laborum consectetur adipisicing consectetur consequat ullamco non dolore elit ut laborum ad consequat commodo voluptate dolore ex occaecat magna do qui reprehenderit sunt et ut incididunt magna fugiat velit id sint incididunt consectetur quis eu officia anim nisi nostrud non nostrud non aute dolor culpa occaecat adipisicing ad veniam in aliqua non in ea ea et labore deserunt ut id sit quis laborum adipisicing incididunt nisi voluptate quis adipisicing ut do sint et dolore dolor proident pariatur irure et anim deserunt id non nisi in voluptate dolore enim in quis aute cillum excepteur sunt amet laboris est in ex et consectetur dolore sed in cillum non ea excepteur magna duis id deserunt exercitation irure proident sint aliqua veniam dolore culpa consectetur ut in adipisicing ut cupidatat dolor velit ea laboris in ad do ut veniam pariatur dolor aliqua aliqua culpa ut do sit esse eu est non fugiat elit sed incididunt et ut tempor irure minim in minim in fugiat dolore sit esse nisi ex cillum eiusmod adipisicing aliquip in irure exercitation incididunt veniam elit veniam aliqua exercitation ut irure sint elit nisi mollit qui consectetur.
+            .relatives
+              h3 Questions relatives
+              .qtag Ex officia
+              .qtag Lorem ipsum adipisicing dolore
+              .qtag Lorem ipsum cupidatat amet laborum
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q12(type="radio" name="questions")
+          label(for="q12") pourquoi pensez-vous qu'une gestion OPCVM est meilleure qu'une gestion en titres vifs ?
+          .tab-content
+            p Lorem ipsum nulla ea ea esse qui exercitation dolore incididunt tempor pariatur ad proident incididunt ea deserunt sint in in irure aliquip nulla aliquip nostrud et ullamco qui laborum proident duis ea do labore in voluptate enim sed irure exercitation non ea nisi velit magna amet occaecat officia sunt ea aliqua amet exercitation incididunt sed aute voluptate reprehenderit esse dolore adipisicing cillum esse duis ullamco irure deserunt adipisicing aliqua tempor pariatur aliquip in ea nostrud ullamco culpa anim in voluptate id pariatur irure dolore ea laborum est occaecat exercitation reprehenderit eu culpa proident do quis sit dolor occaecat eiusmod consectetur voluptate cillum elit qui quis consequat excepteur consectetur consectetur velit laboris excepteur dolore proident ut sed occaecat deserunt duis consequat aute exercitation aliquip ut qui dolor irure veniam ea duis sed ullamco dolore elit reprehenderit ex laboris occaecat occaecat ut ut mollit occaecat incididunt excepteur ex deserunt officia do irure ex.
+            .relatives
+              h3 Questions relatives
+              .qtag Ut sed duis in
+              .qtag Consectetur occaecat minim
+              .qtag Do in ad
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q13(type="radio" name="questions")
+          label(for="q13") Puis-je investir sur des produits autres que vos fonds ?
+          .tab-content
+            p Dolore in mollit laboris nisi duis dolor labore officia ut dolore eu aliqua laborum nulla incididunt labore est dolor laboris elit eiusmod officia reprehenderit in adipisicing reprehenderit laborum laboris non laborum laboris ad id in proident commodo veniam occaecat cillum excepteur mollit nostrud veniam ut consequat nisi magna mollit minim eiusmod in minim eiusmod sed non pariatur dolore ut consequat nostrud non cupidatat dolore velit est exercitation elit esse labore do dolor elit aliqua deserunt exercitation ut reprehenderit sit dolore fugiat in proident veniam dolore ullamco ad culpa id dolor anim pariatur deserunt qui non amet adipisicing occaecat occaecat culpa aliqua est eu adipisicing incididunt ad non consequat proident excepteur nulla mollit exercitation laboris consectetur dolor minim ea id est cupidatat eiusmod nisi magna proident labore anim ullamco sunt esse fugiat fugiat dolor enim elit et aliqua culpa sint nulla officia consectetur dolor mollit anim excepteur laboris cillum occaecat ex cupidatat qui sunt mollit.
+            .relatives
+              h3 Questions relatives
+              .qtag Lorem ipsum proident aliquip amet sit
+              .qtag Nisi consequat nisi aliqua
+              .qtag Ut nulla ut
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q14(type="radio" name="questions")
+          label(for="q14") Avez-vous des fonds socialement et éthiquement responsable ?
+          .tab-content
+            p In non quis id consequat occaecat est ad anim esse nisi aute ullamco eiusmod nisi veniam non occaecat tempor ea commodo est mollit in reprehenderit fugiat labore non mollit dolor amet officia consequat nulla reprehenderit occaecat nisi dolore non ut sit deserunt amet dolore laboris id deserunt fugiat irure mollit ut reprehenderit in est dolor tempor commodo anim sint amet excepteur deserunt in reprehenderit consectetur in aute sed esse in consectetur quis veniam sunt deserunt enim in et voluptate ex incididunt elit ad nulla commodo dolore sit magna excepteur tempor id laborum aliquip sed ullamco in excepteur nisi voluptate laboris proident exercitation non consectetur ad exercitation enim exercitation incididunt velit ad pariatur reprehenderit elit excepteur laborum ut in mollit non labore pariatur est officia dolor elit elit nisi pariatur eiusmod sint aute occaecat eiusmod in amet dolor ut pariatur dolor in labore aliquip enim eiusmod amet non reprehenderit occaecat dolore est excepteur ut ad laboris veniam labore esse ut minim aliquip incididunt dolore culpa elit commodo excepteur pariatur exercitation in in proident adipisicing non sed duis et sit in laboris excepteur aute qui ut sit proident adipisicing sint reprehenderit fugiat enim exercitation duis quis voluptate in nostrud ut qui minim sint fugiat pariatur incididunt eiusmod esse consectetur voluptate ullamco cupidatat magna velit dolor amet ex elit culpa incididunt sed deserunt laborum culpa velit elit exercitation ad amet adipisicing ea excepteur sed est in cupidatat adipisicing ut.
+            .relatives
+              h3 Questions relatives
+              .qtag Pariatur quis irure
+              .qtag Lorem ipsum amet ea labore
+              .qtag Reprehenderit incididunt
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q15(type="radio" name="questions")
+          label(for="q15") L'ISR semble être une thématique prépondérante chez Carmignac ; en quoi vous différenciez-vous par rapport à vos concurrents ?
+          .tab-content
+            p Officia quis labore ut officia fugiat excepteur ullamco deserunt dolore cillum qui magna quis eiusmod ullamco enim consequat laborum reprehenderit labore nulla deserunt ea laboris consectetur consequat occaecat eu eiusmod consectetur enim occaecat ad quis pariatur fugiat quis dolor tempor dolore duis sed in magna ut eiusmod irure dolore fugiat amet in amet id deserunt officia et do excepteur in quis exercitation et occaecat nostrud occaecat veniam voluptate tempor est exercitation et laboris irure minim non minim ut proident elit est et ut cupidatat exercitation aute mollit quis dolor quis duis cillum elit pariatur aute nisi ut sed sed ad cupidatat fugiat pariatur cupidatat veniam qui irure ex id excepteur pariatur pariatur reprehenderit sint nisi elit cillum aute pariatur elit laborum sed ullamco voluptate est est nostrud nisi officia consectetur magna ad commodo esse consectetur labore nisi labore in sunt esse dolore duis in adipisicing occaecat eu ex ad aliqua elit ut elit magna sint do anim ut fugiat exercitation sit in id ullamco exercitation dolor tempor sunt ea minim irure exercitation adipisicing magna aliqua pariatur ad labore laborum adipisicing fugiat cupidatat velit aliquip enim sed nostrud commodo magna aliquip deserunt elit in consequat elit reprehenderit excepteur mollit commodo labore est labore dolore amet consectetur enim magna dolore eu cillum velit in eu excepteur laborum laboris in reprehenderit laboris et ut reprehenderit in voluptate nulla ad in tempor et tempor in consequat tempor.
+            .relatives
+              h3 Questions relatives
+              .qtag Mollit non est velit ut
+              .qtag Pariatur esse nulla exercitation et
+              .qtag Sunt sit nisi elit non
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q16(type="radio" name="questions")
+          label(for="q16") Comment faites vous pour investir nos liquidités lorsque on vous confie nos fonds ?
+          .tab-content
+            p Cupidatat sunt velit anim velit id deserunt anim in consectetur in in ut excepteur officia reprehenderit in ut in sit ut laboris occaecat do in do sunt dolore incididunt magna in excepteur dolor veniam dolor et exercitation officia sint dolor labore proident et ullamco reprehenderit dolor voluptate nulla laboris occaecat aute quis laborum aute ullamco fugiat eu aliqua esse laborum nostrud in in labore ut do id anim adipisicing dolor in occaecat sed non ullamco ea consectetur excepteur ea do eiusmod occaecat qui ut ut minim elit eu qui incididunt veniam tempor nostrud id aliqua mollit cillum excepteur eiusmod ea ea adipisicing reprehenderit ut fugiat ut in dolor proident cillum sed fugiat sit adipisicing sit ut irure incididunt magna nostrud occaecat mollit consectetur dolor eu id voluptate eiusmod pariatur eu mollit id ullamco excepteur in tempor duis culpa sunt et irure fugiat dolore adipisicing velit laboris cillum in nulla incididunt pariatur in cillum proident exercitation ut consequat ad reprehenderit esse tempor nostrud non voluptate aute id commodo ea pariatur dolore culpa enim nisi sed ex magna et duis.
+            .relatives
+              h3 Questions relatives
+              .qtag Veniam eu reprehenderit culpa in
+              .qtag Lorem ipsum et fugiat
+              .qtag Laboris amet est id exercitation
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q17(type="radio" name="questions")
+          label(for="q17") Pourquoi investir dans une assurance vie ?
+          .tab-content
+            p Dolore ullamco id ullamco dolor magna in amet dolore ex nostrud commodo dolore cupidatat proident est velit eu minim consequat incididunt excepteur mollit id exercitation eiusmod dolore elit laboris in excepteur proident ex nisi ut commodo in minim qui fugiat fugiat nostrud dolor eiusmod sit ea dolor est sunt in cillum aute eiusmod proident eiusmod non eu ut ad elit incididunt laborum mollit excepteur adipisicing amet nisi aliquip do aliqua mollit sunt eu ut pariatur consequat magna duis esse ad eu ut irure in eiusmod in qui sit nostrud sit officia aute laboris culpa fugiat deserunt duis cillum do est elit dolor minim laboris sint dolor esse consectetur nisi dolor eiusmod proident voluptate officia sed minim anim commodo nulla sit culpa exercitation veniam culpa dolore deserunt cupidatat sit ad mollit aute enim ullamco officia sit nisi commodo consequat in proident anim labore dolore ullamco et incididunt duis magna eiusmod ut dolore est commodo adipisicing dolor aliqua duis laborum.
+            .relatives
+              h3 Questions relatives
+              .qtag Exercitation reprehenderit pariatur excepteur
+              .qtag Elit aliqua
+              .qtag Ea ad
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q18(type="radio" name="questions")
+          label(for="q18") Comment résumeriez-vous Carmignac en quelques mots ?
+          .tab-content
+            p Non adipisicing mollit mollit in nisi cupidatat ullamco duis ut cupidatat ad anim cupidatat et reprehenderit dolore in dolore sunt reprehenderit voluptate aliquip dolore esse nulla ea ad aute pariatur sed nostrud qui dolor consectetur est ullamco fugiat duis aute velit ut proident sed sunt nostrud dolor voluptate do do dolor ut id in do voluptate in aliquip enim laboris culpa in irure incididunt labore dolore culpa sed sit aute eiusmod eiusmod labore veniam ut ex dolor ut quis reprehenderit magna dolore reprehenderit esse qui dolor exercitation pariatur in enim tempor cillum magna sed minim laborum consequat pariatur duis eu dolor exercitation nisi officia id reprehenderit ut in sit ad sint eu officia laborum esse sit ex laboris ullamco in ea veniam dolor duis mollit ut non ut tempor sunt cillum occaecat mollit non dolor irure ut adipisicing nisi culpa dolore quis reprehenderit dolore minim cupidatat eiusmod fugiat adipisicing ex duis exercitation nulla aliqua ut eiusmod culpa et ut ad nisi in in qui ut qui ut in consequat cillum et cupidatat dolor ea tempor ullamco ut aliqua aliquip pariatur excepteur dolore nisi cillum minim non labore duis dolor id et dolore laborum veniam do minim magna exercitation voluptate ex ullamco non sunt eiusmod ea ex amet aliqua non est ullamco incididunt aliqua quis nulla magna aliquip qui ut fugiat sed proident enim.
+            .relatives
+              h3 Questions relatives
+              .qtag Lorem ipsum irure nostrud pariatur consequat
+              .qtag Minim duis dolore
+              .qtag Consequat deserunt id nulla
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q19(type="radio" name="questions")
+          label(for="q19") Quelle différence y a t il entre la gestion libre et la gestion accompagnée?
+          .tab-content
+            p Elit dolor mollit nostrud veniam minim pariatur ut labore et deserunt voluptate cupidatat sunt ut ut quis anim laborum eu ex nulla dolore reprehenderit aliquip qui id tempor minim ex in eiusmod est consequat laborum eu nisi incididunt eu sint voluptate commodo consequat dolore dolore voluptate quis commodo ex ea cillum mollit cupidatat minim quis duis dolore tempor minim fugiat dolore cupidatat quis sed elit occaecat dolore eiusmod commodo adipisicing pariatur culpa mollit excepteur exercitation consectetur dolor sunt dolore ut minim ut sunt ea velit amet laboris est aliqua esse ea ad adipisicing adipisicing exercitation officia sed ut voluptate culpa ad sint aliquip veniam anim sit deserunt ullamco adipisicing irure consectetur laboris consectetur officia labore ad consectetur tempor qui irure qui exercitation veniam commodo non deserunt id in proident excepteur consequat commodo irure sed ex laboris est incididunt excepteur aute pariatur occaecat non duis nostrud minim exercitation aute laborum deserunt est ea quis amet esse dolor ut non et elit id consectetur non ad aute dolor officia et sunt proident et amet nostrud dolor eiusmod deserunt consequat duis nulla aliquip incididunt commodo pariatur sint excepteur ut fugiat occaecat non est dolor aliqua laborum dolore sint eu velit irure aliqua irure laborum velit exercitation do sit ullamco magna dolor laboris dolore mollit exercitation dolore id ea eiusmod do anim occaecat ut esse adipisicing anim et fugiat adipisicing cillum consectetur in dolore laboris dolor id in sit non qui cillum eiusmod magna aliqua mollit exercitation duis enim.
+            .relatives
+              h3 Questions relatives
+              .qtag Amet enim
+              .qtag Est exercitation commodo
+              .qtag Pariatur laborum aliquip occaecat
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q20(type="radio" name="questions")
+          label(for="q20") Pouvez vous m'accompagner sur des problématiques fiscales ?
+          .tab-content
+            p Lorem ipsum velit sed tempor laboris ut nulla eu deserunt incididunt elit exercitation duis nisi eiusmod dolor labore id nulla cillum ut incididunt nostrud eiusmod commodo elit minim eu eu ex culpa commodo anim do eu fugiat mollit aliqua sint nulla nostrud dolor dolor ullamco dolor culpa aute cillum adipisicing nisi ea consequat exercitation proident dolor laborum laboris reprehenderit aute labore dolore ut velit ut incididunt et incididunt ad aute esse ullamco et enim ut nisi exercitation nostrud adipisicing et sunt nulla occaecat anim enim in non dolor anim qui sint minim nostrud sed dolor irure laborum dolor veniam ad sunt ut incididunt aliqua do aute mollit id in consequat in dolore laborum magna sint non ut ut esse labore do labore et duis dolore dolore in laboris ut velit laborum ex id consectetur ex sint incididunt pariatur esse elit in consequat adipisicing irure voluptate sit aute ut laborum culpa occaecat fugiat commodo dolor voluptate laboris sunt veniam laborum dolor mollit in aliquip excepteur dolor ut irure officia culpa ad tempor dolore labore proident esse irure in dolor non consectetur ut consequat nostrud reprehenderit in velit officia amet eiusmod commodo mollit dolor culpa fugiat quis id sunt quis ex elit nostrud est adipisicing reprehenderit labore nulla dolor ut commodo ex aliquip elit id labore dolore elit occaecat quis enim duis incididunt nulla occaecat est nisi deserunt aliquip consequat irure dolor consequat excepteur quis culpa voluptate exercitation ullamco eiusmod minim officia ex tempor sed ut aliquip do fugiat culpa officia sit nisi qui culpa elit.
+            .relatives
+              h3 Questions relatives
+              .qtag Ut non sunt
+              .qtag Sit eiusmod deserunt incididunt commodo
+              .qtag Dolore non
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q21(type="radio" name="questions")
+          label(for="q21") avez- vous des produits à capital garanti?
+          .tab-content
+            p Lorem ipsum velit adipisicing duis duis occaecat voluptate ullamco enim aliqua magna exercitation et irure non ut magna laboris dolore eu ex do non magna irure eiusmod adipisicing id quis sunt cupidatat pariatur voluptate magna nostrud esse cillum veniam sunt dolor tempor fugiat amet aute consectetur sint adipisicing in ex sunt exercitation anim do duis mollit enim enim laboris nostrud incididunt eu in ad reprehenderit non enim labore qui voluptate quis do cupidatat ex ut ex velit sed exercitation in exercitation sit velit aliquip et in in quis voluptate consectetur fugiat anim ea dolor consectetur ut enim ex dolor non cupidatat anim veniam non in et et labore adipisicing non laboris culpa incididunt aute proident duis officia tempor laborum incididunt dolor eiusmod anim sint dolore consequat aute dolore dolore veniam velit pariatur ea cillum reprehenderit do in id enim velit culpa ut sunt voluptate sed occaecat officia officia irure dolore quis esse aute ad duis incididunt.
+            .relatives
+              h3 Questions relatives
+              .qtag Occaecat nisi
+              .qtag Consequat ullamco deserunt adipisicing quis
+              .qtag Aute cillum in
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q22(type="radio" name="questions")
+          label(for="q22") quel est votre partenaire assurance?
+          .tab-content
+            p Lorem ipsum occaecat voluptate pariatur ut ea laborum sunt aute dolore commodo id sint voluptate dolor commodo est magna et ut qui nisi non aute duis tempor irure elit culpa aliqua cupidatat dolore voluptate cillum aute eu in dolor velit dolore proident incididunt ea ex magna commodo culpa pariatur elit do voluptate in dolor eiusmod duis occaecat anim sit sit minim consequat dolore pariatur amet deserunt consequat incididunt sit occaecat fugiat deserunt laborum amet excepteur elit do anim aute id reprehenderit consequat eiusmod laborum officia reprehenderit sint anim cillum est quis excepteur minim commodo consequat consectetur fugiat sint est enim consectetur elit magna elit dolor do adipisicing fugiat sit in amet veniam do exercitation ut dolore sint adipisicing eiusmod culpa consequat officia nisi adipisicing aliqua ut ut exercitation quis commodo in laboris tempor qui cillum nisi sint ad elit culpa ullamco laborum in magna sint dolor nostrud sed labore non enim qui aliquip duis et sint aute incididunt magna cupidatat minim exercitation voluptate laborum reprehenderit amet aliqua.
+            .relatives
+              h3 Questions relatives
+              .qtag Tempor officia laborum aliquip
+              .qtag Dolor nulla sunt proident dolor
+              .qtag Sunt consectetur
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q40(type="radio" name="questions")
+          label(for="q40") Avez-vous des fonds éligibles au PEA ? Si oui, lesquels ?
+          .tab-content
+            p Magna sit aute commodo pariatur deserunt consectetur cillum ut quis voluptate sed consectetur laborum eu enim in pariatur id nisi minim dolore do voluptate officia officia esse labore cillum dolor nostrud occaecat amet reprehenderit anim incididunt qui qui dolore nostrud sunt magna veniam labore est proident tempor in eiusmod incididunt laboris tempor aliqua tempor eu sed aliquip excepteur voluptate dolore culpa ut aliquip enim ut minim adipisicing sint duis ut excepteur quis fugiat dolore qui excepteur incididunt sint cupidatat tempor ut eiusmod culpa excepteur cupidatat dolor est fugiat in est dolor aliquip excepteur adipisicing anim cillum irure voluptate in exercitation mollit enim deserunt aute est duis consequat aute mollit ut sed nostrud ea aliquip incididunt dolor pariatur ullamco velit proident ad cupidatat elit cillum consectetur mollit ut ad tempor excepteur voluptate laboris ullamco ut culpa labore mollit voluptate aliqua occaecat aute duis amet adipisicing veniam dolore in voluptate velit.
+            .relatives
+              h3 Questions relatives
+              .qtag Non exercitation exercitation sint
+              .qtag Lorem ipsum excepteur ex ullamco
+              .qtag Laborum tempor mollit pariatur pariatur
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+          
+        .tab
+          input#q23(type="radio" name="questions")
+          label(for="q23") Êtes-vous présents en province et à l'étranger ?
+          .tab-content
+            p Sed dolor aute eiusmod nulla deserunt sunt minim laboris cupidatat duis consequat nisi anim magna in laborum ad laborum dolor magna nostrud ullamco ea irure quis sunt dolor dolore enim enim ad excepteur reprehenderit laboris anim commodo esse est deserunt commodo consectetur ullamco et officia officia deserunt in labore laborum et consequat nisi dolor duis irure mollit nostrud esse mollit laboris in ut officia est est labore deserunt occaecat ex cupidatat amet mollit veniam aliquip commodo aute consectetur consequat proident excepteur laborum in dolore irure enim cupidatat eiusmod ad ut eu sunt cillum exercitation cupidatat velit duis anim amet proident magna ut est qui do minim quis do qui in consectetur ea commodo ut dolor velit ullamco ullamco nostrud dolore in aliqua dolore aliqua esse do minim duis ad exercitation enim deserunt reprehenderit aliquip pariatur sint officia et do commodo tempor laborum non adipisicing quis sunt.
+            .relatives
+              h3 Questions relatives
+              .qtag Commodo dolor laboris adipisicing irure
+              .qtag Labore excepteur exercitation
+              .qtag Mollit do
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+      .gr3 
+        h2 Être client Carmignac
+        
+        .tab
+          input#q24(type="radio" name="questions")
+          label(for="q24") Est-ce que je peux récupérer mes capitaux, tout ou partie ?
+          .tab-content
+            p Esse non in laboris dolore dolor cillum aliqua ullamco ut quis cillum ut aliquip et veniam nostrud velit irure minim et id ad aute minim deserunt sunt esse ut proident deserunt proident cupidatat do non magna qui nisi cillum sit et nisi reprehenderit tempor sed nisi pariatur consectetur dolore in sit sunt eu pariatur consectetur mollit do labore velit et officia adipisicing do dolore minim eu sit ut est deserunt dolor occaecat sit est ut minim laborum quis labore exercitation minim et minim fugiat laboris dolor ut est anim ad ut nulla sit tempor ea nostrud ullamco culpa est voluptate amet elit ex velit id qui ea reprehenderit quis adipisicing dolore ex duis nulla sunt laborum et id dolor velit minim excepteur sunt voluptate in velit laborum mollit duis officia incididunt ut deserunt anim reprehenderit elit ullamco reprehenderit in in reprehenderit excepteur ut est officia ut excepteur ut irure qui in anim laboris sint ut deserunt in pariatur et aliquip voluptate adipisicing in ad fugiat nostrud est non nostrud ea sit veniam veniam sunt laborum exercitation non enim cupidatat id aliqua est ex excepteur dolore aute proident aute sit aliquip non adipisicing laborum et aute officia aliquip non pariatur fugiat magna aliqua veniam officia aliquip culpa proident in consequat ullamco reprehenderit aliquip in eiusmod magna velit sit esse esse ex ut do ut sint eu nostrud eu ut sunt nisi consectetur pariatur qui ut id minim in mollit pariatur eiusmod labore tempor eiusmod consectetur cillum in aliqua ad excepteur ad enim velit esse sed eu quis excepteur incididunt ut dolor tempor ut esse mollit do.
+            .relatives
+              h3 Questions relatives
+              .qtag Magna irure amet
+              .qtag Ad anim deserunt do ut
+              .qtag Lorem ipsum exercitation proident anim
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q25(type="radio" name="questions")
+          label(for="q25") Comment me tenez vous informé des opportunités ou des risques sur mon portefeuille ?
+          .tab-content
+            p Lorem ipsum dolor esse in ea consequat esse nisi sint et sed sed cupidatat proident sint labore irure ut dolor minim ex laborum commodo amet fugiat nulla consectetur sit anim ex aliquip incididunt aute ea aute fugiat adipisicing pariatur non dolor eu consequat nostrud dolore consequat consectetur cillum reprehenderit duis ut qui irure qui ut ut ut dolor mollit aliqua deserunt occaecat quis consectetur magna duis proident enim minim deserunt ut dolor ad minim id cillum id ut dolore et eu enim fugiat nisi et incididunt exercitation nostrud occaecat nisi pariatur in mollit amet mollit voluptate esse cillum duis elit ut deserunt velit cupidatat occaecat cupidatat esse ut velit in irure dolor ad mollit in officia excepteur elit sunt occaecat in occaecat exercitation sit dolor dolore elit dolore dolor tempor quis irure esse laboris in dolor ut sed eiusmod anim nisi sed eu tempor dolor adipisicing ea laborum occaecat sint exercitation reprehenderit tempor culpa elit laboris id minim sint et voluptate consectetur tempor in sint elit consequat excepteur id sed in cillum excepteur ut consequat adipisicing dolore ut in incididunt id minim adipisicing occaecat mollit mollit enim amet id ullamco fugiat sed aute ea voluptate eiusmod laboris pariatur dolor veniam occaecat laboris quis quis voluptate cillum minim.
+            .relatives
+              h3 Questions relatives
+              .qtag Lorem ipsum qui officia adipisicing mollit ut
+              .qtag Dolor sed laborum
+              .qtag Lorem ipsum ut in laboris aliquip sint
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q26(type="radio" name="questions")
+          label(for="q26") Comment puis-je suivre l'évolution de mon portefeuille ?
+          .tab-content
+            p Sint sit sint est ut nostrud dolore qui sit laboris veniam sit est magna in est ut consectetur et ad magna est laborum excepteur laboris dolor deserunt ex nostrud voluptate dolore enim occaecat sed eiusmod enim elit dolore incididunt veniam excepteur nisi nostrud dolore ea ut exercitation aute magna aliquip aliqua labore ut est aliquip non nostrud tempor commodo proident cillum nulla id qui aliqua adipisicing mollit cillum ex labore anim amet culpa dolor fugiat laborum laboris ut ullamco cillum dolore ut sint incididunt eiusmod laboris reprehenderit ut aliqua elit eu incididunt commodo est enim pariatur pariatur laborum dolor et nisi esse anim sunt culpa dolor ut amet sed minim ut quis incididunt ut sint reprehenderit id aliqua enim labore duis sit qui id velit exercitation cupidatat exercitation voluptate officia sint amet non sed anim proident sint cillum est anim in commodo nulla aliqua dolor ut sint aute qui dolor dolore consectetur voluptate ea est adipisicing excepteur ex ad cillum ut nostrud laboris anim qui nisi voluptate adipisicing nisi ad aliquip quis ex est deserunt elit proident sint labore aute voluptate aute esse cupidatat pariatur eu.
+            .relatives
+              h3 Questions relatives
+              .qtag Lorem ipsum incididunt ex culpa
+              .qtag In labore ut
+              .qtag Minim exercitation elit ut
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q27(type="radio" name="questions")
+          label(for="q27") Comment accompagnez vous vos clients au quotidien ? Ai-je un interlocuteur personnalisé ou s'agit il d'une plateforme?
+          .tab-content
+            p Dolor laboris amet ad culpa qui dolore eiusmod nisi fugiat occaecat adipisicing tempor do veniam esse enim tempor ad anim eiusmod in officia ullamco irure est velit consectetur pariatur voluptate sed minim adipisicing magna voluptate sunt deserunt ea reprehenderit ut cillum dolore minim officia nisi cupidatat aliqua esse ut duis incididunt eiusmod laboris ut dolor id officia tempor anim reprehenderit veniam est reprehenderit magna proident adipisicing nulla cillum incididunt et elit consectetur elit dolore nostrud id eiusmod non in eiusmod exercitation aliqua reprehenderit ad eu culpa ut adipisicing magna mollit aliqua id enim cupidatat deserunt ea dolor labore aliqua minim dolore ut aute ut est nulla enim cillum laborum ullamco nulla consequat minim eiusmod reprehenderit anim sunt dolore in duis consequat sunt ex exercitation tempor enim mollit laboris anim non commodo cupidatat consequat reprehenderit officia dolore veniam dolor ea aute dolor officia commodo cupidatat tempor magna incididunt esse cillum ea anim qui exercitation culpa in veniam dolore officia in in labore nulla ullamco amet sunt mollit in occaecat consequat ut cillum cupidatat ullamco eu dolore dolore et consequat ad mollit ut in excepteur et mollit aliqua culpa esse minim irure officia voluptate eiusmod nulla exercitation adipisicing ut ut aliqua in sit pariatur officia duis consequat ut anim sunt aute consectetur aliqua irure id sit minim ea duis nisi culpa non dolore excepteur consequat magna sint veniam excepteur tempor aliquip mollit labore esse commodo ad ullamco in proident labore duis dolor quis officia magna quis in ex sunt incididunt sunt aliquip ut anim cupidatat ex reprehenderit sint ex magna nostrud velit nisi ea.
+            .relatives
+              h3 Questions relatives
+              .qtag Consectetur commodo deserunt enim proident
+              .qtag Sunt id ut magna aute
+              .qtag Irure aliqua in ea
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q28(type="radio" name="questions")
+          label(for="q28") Comment se passe le process  d'onboarding ?
+          .tab-content
+            p Irure id velit minim nisi in voluptate velit amet excepteur sunt nisi est ea et dolor quis ut adipisicing duis nisi elit dolore pariatur non dolore dolor laboris exercitation quis aliqua commodo in fugiat quis nisi pariatur commodo et magna officia non aliqua ullamco et sint ea qui dolore voluptate ut officia culpa velit esse reprehenderit elit ea ut ex in proident proident duis excepteur velit consequat consectetur ullamco in enim quis tempor amet veniam amet nulla dolor laborum sunt ut cupidatat est nostrud adipisicing nulla pariatur et excepteur amet consequat ea eiusmod ea eu irure culpa ad nisi nulla culpa eiusmod et consectetur in est dolore nulla aliqua dolore dolore sit id culpa irure deserunt tempor amet laboris aliquip incididunt duis eiusmod adipisicing voluptate aute duis elit ad cillum ullamco voluptate dolor dolore et proident dolor in cillum dolore dolore commodo pariatur aliqua id voluptate deserunt nulla sit commodo ut irure ad incididunt nostrud consectetur ex elit ut eiusmod ex nostrud non esse sint sit in laboris sint irure fugiat est nostrud et magna commodo id ex non officia in eu nostrud dolor irure ea labore velit cupidatat elit cupidatat commodo fugiat sunt reprehenderit id voluptate laboris voluptate sit aliquip velit.
+            .relatives
+              h3 Questions relatives
+              .qtag Nisi qui minim qui
+              .qtag Elit fugiat
+              .qtag Occaecat eiusmod commodo in
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q29(type="radio" name="questions")
+          label(for="q29") Comment faites-vous la sélection de fonds pour mon profil ?
+          .tab-content
+            p Dolor sed fugiat consectetur non veniam irure sit duis nulla exercitation ut sunt ea nisi fugiat est ut laboris nulla enim cupidatat quis ut nisi tempor exercitation et laborum sit consequat in occaecat elit ut commodo cupidatat fugiat amet sed pariatur anim veniam anim tempor excepteur sunt dolore quis deserunt dolore tempor elit fugiat ullamco nulla ut laboris dolor ut deserunt in eu eiusmod et nostrud quis ullamco amet cillum deserunt id in sit commodo ut commodo irure tempor nulla officia incididunt dolore in dolore esse ut est tempor ex ut duis velit consectetur occaecat nulla deserunt ea in eu in non aute eiusmod sunt anim in amet irure nostrud voluptate aute esse dolore voluptate duis reprehenderit ullamco culpa culpa dolor non ad dolor reprehenderit deserunt voluptate anim dolore in aliqua magna do incididunt sed sed tempor minim qui voluptate officia consequat elit nulla labore exercitation ea laborum enim magna reprehenderit sunt in aliquip eiusmod anim velit nulla in magna qui incididunt reprehenderit elit eiusmod aliquip sint sint duis deserunt dolor voluptate nulla fugiat occaecat laboris proident nostrud aute officia dolore ut ad fugiat culpa consequat voluptate tempor quis veniam sunt magna enim commodo do anim ad consectetur nostrud sit proident velit officia mollit consequat sit et do mollit magna minim ut proident ad quis do sit do et cupidatat fugiat dolor exercitation reprehenderit adipisicing ut officia duis proident commodo dolore in eu elit magna enim sunt velit in cupidatat enim eiusmod velit exercitation officia fugiat est sunt ad eu anim adipisicing in reprehenderit sunt et mollit officia ex labore consequat ullamco nulla aliqua qui.
+            .relatives
+              h3 Questions relatives
+              .qtag Duis cupidatat
+              .qtag Quis aliquip ex excepteur
+              .qtag Laborum ut esse dolore
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q30(type="radio" name="questions")
+          label(for="q30") Prenez-vous en charge la gestion de mon portefeuille?
+          .tab-content
+            p Lorem ipsum occaecat ad quis nostrud sunt ex irure culpa velit ut nulla ut exercitation laborum dolor dolore voluptate fugiat duis proident enim ea excepteur sed exercitation sint est dolore ad aliqua elit sed laboris voluptate eu amet amet ut duis et exercitation officia minim sint cupidatat proident voluptate dolore in sed magna ut aute aliqua aliquip cupidatat anim consequat in amet pariatur anim sed nostrud exercitation anim officia irure magna fugiat qui laborum enim eiusmod dolor amet dolor minim aliquip in aliqua dolor excepteur cillum proident anim ex enim non minim anim duis laboris deserunt elit nostrud ea aliqua ex anim dolore ut incididunt id duis laboris in non laboris ad excepteur nulla quis do nisi occaecat laboris excepteur magna anim in laborum dolor laborum aute consectetur occaecat aliquip in id amet minim elit sit nulla ullamco consectetur id do duis nostrud magna dolor aliqua veniam consequat in voluptate sit veniam sit in pariatur aliquip consequat sit incididunt dolor anim aute aliqua ut cillum labore dolor mollit esse sunt duis dolore in in eu veniam velit ut et sit tempor exercitation in deserunt dolor non anim do sunt dolore irure quis voluptate nisi ea elit nulla quis amet dolor dolor sint commodo eiusmod aliquip cupidatat sed duis sed ullamco amet ut anim do aute velit aute sint amet aliquip in incididunt est voluptate non dolore ex dolor et nostrud.
+            .relatives
+              h3 Questions relatives
+              .qtag Labore culpa laborum nostrud eu
+              .qtag Commodo irure irure ut do
+              .qtag Nisi sed ad
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q31(type="radio" name="questions")
+          label(for="q31") Puis-je dégager une rente ?
+          .tab-content
+            p Proident fugiat et est exercitation non veniam quis exercitation quis dolore quis et aliqua ut anim officia consequat qui sunt sit ex velit incididunt est consequat cillum eu occaecat laboris culpa exercitation magna sit in eiusmod dolore amet quis anim aliquip deserunt officia do velit amet aliqua anim amet est ea aliqua voluptate est nisi et anim deserunt consectetur officia et id nulla tempor in reprehenderit in irure est ut ut incididunt eiusmod officia occaecat cupidatat duis laborum deserunt adipisicing in fugiat ullamco est duis nostrud incididunt culpa ea sed consectetur deserunt aliqua dolor dolor pariatur ullamco nulla aliquip in ex aliquip culpa laborum labore et tempor exercitation pariatur ex elit nulla tempor consectetur dolore ea culpa ea cillum officia sed voluptate laborum fugiat sed irure sit officia quis dolore duis adipisicing nulla commodo in irure eiusmod quis reprehenderit enim ad adipisicing excepteur sint excepteur ut nisi proident velit et nisi pariatur ad dolore eiusmod proident culpa excepteur non incididunt fugiat exercitation excepteur cupidatat id culpa ad sint nulla aliqua voluptate ea culpa occaecat et aliquip mollit commodo elit sit in ut cupidatat magna ut occaecat ut cupidatat labore duis aliquip sit et amet cupidatat aute cillum occaecat aliqua duis non ad pariatur esse sunt sit consequat amet magna in enim consequat elit adipisicing tempor amet proident duis dolore consectetur officia ut cillum aute dolore eu commodo nulla ex non dolore adipisicing proident sint elit minim commodo eiusmod veniam dolor esse occaecat occaecat mollit dolor est exercitation exercitation magna fugiat ut non aliquip ut eu esse minim laborum in fugiat dolor cupidatat.
+            .relatives
+              h3 Questions relatives
+              .qtag Nulla dolor laboris amet
+              .qtag In tempor consectetur
+              .qtag Lorem ipsum consequat exercitation sunt
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        
+        .tab
+          input#q312(type="radio" name="questions")
+          label(for="q312") Quelle réactivité si je veux changer de profil ?
+          .tab-content
+            p Ad consectetur elit eiusmod magna ut dolore qui occaecat tempor dolor commodo pariatur amet fugiat non ut est anim qui adipisicing adipisicing commodo cillum aliqua eu tempor in veniam exercitation tempor qui consectetur laborum laborum sunt eu dolore enim eu officia in sunt in mollit do aliqua est ut mollit dolor aute ut ea elit occaecat pariatur reprehenderit laboris do minim velit laborum exercitation eiusmod cillum exercitation sit anim laboris incididunt duis magna laboris commodo velit sint sunt velit sint laboris incididunt dolor non ex dolore deserunt exercitation nulla amet dolor et sit nisi ea anim aliquip dolor consectetur sunt et ut cupidatat ullamco deserunt aliquip culpa tempor id est commodo in non dolor magna consequat aliqua culpa anim mollit excepteur dolore anim ut nisi excepteur anim pariatur deserunt in sunt dolor nisi dolor et nostrud sint commodo voluptate culpa et et ut incididunt duis eu nostrud ad labore mollit pariatur cupidatat tempor irure ad commodo veniam reprehenderit pariatur officia non excepteur dolor sed minim et consequat tempor anim aliquip culpa.
+            .relatives
+              h3 Questions relatives
+              .qtag Amet aute adipisicing occaecat
+              .qtag Anim in occaecat
+              .qtag Magna minim non est ut
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+      .gr4 
+        h2 Risques & performances
+        
+        .tab
+          input#q32(type="radio" name="questions")
+          label(for="q32") Y a-t'il un bon moment pour investir ?
+          .tab-content
+            p Magna ullamco nisi pariatur anim dolore tempor aliquip fugiat reprehenderit elit ea laboris id adipisicing cupidatat voluptate aliqua voluptate occaecat cillum elit et ad cillum eiusmod non sed nisi ea mollit excepteur esse in est sunt ut labore ad consectetur consectetur fugiat et esse id dolore reprehenderit occaecat duis officia sint occaecat cupidatat nulla commodo sint ut ex adipisicing enim dolor amet non sunt fugiat ad sed veniam deserunt pariatur magna laborum sunt quis cupidatat laborum cillum veniam laboris qui duis qui elit pariatur qui id ad ut nisi cillum id et in do aliquip mollit dolore adipisicing duis ad occaecat consequat in nulla irure culpa deserunt nisi amet velit nostrud excepteur nisi excepteur ut nisi dolore cillum in fugiat consequat deserunt dolore ut mollit veniam id nulla aute ex est ullamco magna sit qui exercitation nostrud consectetur reprehenderit proident esse occaecat amet ad ex sit adipisicing aliquip deserunt sint mollit in elit anim voluptate nostrud duis minim ea nisi enim veniam consequat non laboris sed deserunt aliqua dolor ea minim magna exercitation adipisicing quis magna adipisicing sit anim excepteur consectetur dolore aliqua in occaecat ad in esse esse ea pariatur elit nisi duis et ex ex tempor duis qui occaecat et aute dolor sint occaecat laborum ex labore commodo irure do quis dolor dolor adipisicing cillum pariatur cillum cillum minim ullamco eu non ullamco ullamco sunt amet aute.
+            .relatives
+              h3 Questions relatives
+              .qtag Dolor in in mollit qui
+              .qtag Lorem ipsum incididunt minim incididunt ut
+              .qtag Enim mollit commodo labore proident
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q33(type="radio" name="questions")
+          label(for="q33") Quelles sont les sécurités sur les actifs que je vous confie ?
+          .tab-content
+            p Sed et fugiat esse tempor dolor dolor sint in amet ut exercitation sit reprehenderit magna commodo esse enim officia nisi eu deserunt ad occaecat non magna dolor mollit aliqua excepteur sed laborum minim non ut veniam deserunt in laboris est ea nulla sunt enim laborum dolore duis duis pariatur deserunt id non proident nulla anim ut ut minim ex nostrud tempor voluptate incididunt occaecat minim minim ut eiusmod in minim dolore velit ut non dolor culpa consectetur ex aute amet eu ea dolore nostrud aute velit sed elit ut ut sit nostrud cillum proident non occaecat sed aliqua duis aliqua consectetur ut ut nulla mollit cillum enim eiusmod cillum do reprehenderit eiusmod occaecat dolor eu enim nostrud eiusmod incididunt pariatur velit ullamco excepteur dolor nulla sit eu sunt dolor labore laboris velit laborum proident elit nulla dolore ad dolore deserunt qui pariatur qui occaecat minim ut sint dolor consectetur esse enim laborum aliqua quis occaecat amet eu est sunt sunt aliqua dolore ea sed eu aute sit do est dolor dolore reprehenderit ex eu occaecat adipisicing consectetur nisi culpa duis ullamco est anim duis quis nostrud reprehenderit in ut magna minim sit do eiusmod ut amet ullamco in est qui laborum officia sint mollit ut anim eiusmod exercitation dolor in magna cillum.
+            .relatives
+              h3 Questions relatives
+              .qtag Dolor reprehenderit adipisicing et cupidatat
+              .qtag Nostrud fugiat
+              .qtag Commodo ad sint
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q34(type="radio" name="questions")
+          label(for="q34") Combien puis-je espérer gagner ?
+          .tab-content
+            p Anim sed enim nostrud commodo tempor fugiat dolore duis consequat quis ea aute occaecat laboris in mollit cillum excepteur ut adipisicing cillum dolore nisi cillum exercitation mollit fugiat excepteur dolor reprehenderit officia anim quis sit deserunt commodo aliqua deserunt mollit et sunt id labore sed sed irure irure exercitation eiusmod anim nostrud ut excepteur magna magna dolor occaecat officia ad id qui consectetur sit aliqua labore reprehenderit voluptate ad do consequat qui velit irure esse cillum voluptate quis occaecat dolor nostrud nulla sunt est eiusmod et incididunt proident sunt irure ad esse ea sint irure adipisicing ullamco eiusmod in amet consectetur minim mollit do officia quis officia excepteur ullamco cillum ex enim adipisicing esse voluptate cupidatat consectetur dolore culpa veniam laboris eiusmod ut quis nostrud esse anim velit pariatur deserunt fugiat et sint quis elit commodo anim eiusmod ex officia occaecat ut eu do aliqua nulla ullamco laborum ad mollit deserunt dolor elit proident reprehenderit voluptate ad proident non consectetur do aliquip consectetur duis est velit officia quis do et quis laboris quis quis dolor culpa ea ea dolor adipisicing aliquip veniam anim in culpa ut in aliqua tempor mollit mollit veniam esse eu irure sed ut pariatur occaecat id labore anim pariatur sed veniam in ullamco labore ea proident fugiat irure culpa anim magna laboris veniam adipisicing sit qui officia ullamco enim officia amet nostrud laborum et dolor quis magna quis eiusmod esse reprehenderit reprehenderit deserunt aliquip laborum velit elit nisi laborum dolor irure excepteur dolore consectetur laboris labore sint sint.
+            .relatives
+              h3 Questions relatives
+              .qtag Irure veniam reprehenderit magna
+              .qtag Eu deserunt
+              .qtag Nisi consectetur
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q35(type="radio" name="questions")
+          label(for="q35") Offrez-vous des solutions à capital garanti ?
+          .tab-content
+            p Commodo non cillum exercitation duis velit in exercitation pariatur ex do cupidatat aute cupidatat aute dolor labore reprehenderit duis veniam est anim minim amet quis nulla labore in occaecat irure dolore nisi mollit ut eu consectetur labore exercitation tempor ullamco consequat magna est sint amet ullamco voluptate velit eiusmod ut ut dolore cillum labore id aute nulla nostrud laborum excepteur ea qui ut aute dolor adipisicing dolor proident enim enim laborum commodo et nisi in dolore ea eu officia proident nostrud officia sed eiusmod velit nostrud mollit dolore esse adipisicing laboris laborum pariatur adipisicing sint sit dolor cillum ullamco sed dolore dolor eu dolore ex nostrud minim fugiat esse ea irure do reprehenderit tempor pariatur dolor eu consectetur ut labore officia officia minim quis cupidatat aliqua irure deserunt amet mollit esse sunt magna nisi qui consectetur dolore id ex excepteur veniam labore sint eu consectetur ad qui voluptate magna sit tempor amet ad pariatur cillum ex exercitation cillum dolore magna ut nostrud laborum adipisicing nulla non sunt ut dolore duis nisi aliqua eiusmod voluptate tempor est dolor irure cupidatat consectetur minim sed ut elit ut do dolor esse incididunt irure sunt est nulla dolore aliquip occaecat ut esse non dolore consectetur eu sunt esse quis sint consectetur excepteur magna cupidatat do fugiat eu veniam nisi velit laboris duis ea dolor laboris consequat nulla dolore irure in do nostrud est velit ut eu exercitation.
+            .relatives
+              h3 Questions relatives
+              .qtag Lorem ipsum sit qui ut voluptate
+              .qtag Incididunt ut enim
+              .qtag Culpa tempor
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q36(type="radio" name="questions")
+          label(for="q36") Quelle est la réactivité de Carmignac par rapport à la fluctuation des marchés ?
+          .tab-content
+            p Reprehenderit cupidatat aliquip officia irure incididunt in aliqua sed culpa ut adipisicing ut adipisicing cillum minim ea exercitation sunt voluptate qui magna id cupidatat do excepteur consequat duis ullamco quis aliquip est reprehenderit veniam ad in irure proident sunt elit irure mollit tempor ut proident minim ut nisi ut in sed sunt cillum laborum anim sunt aliqua consectetur voluptate eiusmod elit ut ut exercitation nisi pariatur deserunt esse nisi ut amet dolore laboris enim id veniam qui laboris cupidatat pariatur et minim proident eu excepteur et minim cillum non in sunt sint laboris eu cupidatat eu pariatur esse ea in tempor voluptate proident id commodo veniam tempor in sed mollit duis magna magna incididunt est dolore nisi nostrud ullamco velit dolore pariatur ex do enim officia laborum eiusmod dolore est dolor sed nulla irure adipisicing sunt adipisicing fugiat duis cupidatat minim in sit sit sint culpa voluptate consectetur dolor deserunt in ut sit.
+            .relatives
+              h3 Questions relatives
+              .qtag Ut irure in
+              .qtag Lorem ipsum culpa commodo voluptate anim nulla
+              .qtag Nulla eu
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        
+        .tab
+          input#q37(type="radio" name="questions")
+          label(for="q37") Suis-je informé si il y a un problème sur les marchés ?
+          .tab-content
+            p Dolore aute excepteur cupidatat nisi do laboris ea dolor excepteur aliqua dolore dolor cupidatat elit in laborum anim magna ut magna velit ad dolore exercitation pariatur tempor mollit velit ea in commodo minim culpa est duis in est aliquip dolor in enim sunt excepteur tempor laborum fugiat excepteur aliqua esse ut ea eu exercitation excepteur cillum consequat elit sed dolor ullamco voluptate sed aute voluptate ut exercitation cillum culpa et deserunt in reprehenderit in excepteur occaecat aliqua consequat dolor aliqua ut et voluptate adipisicing in magna officia non est reprehenderit nisi sit quis tempor aute excepteur sit excepteur esse anim dolore enim culpa ullamco cupidatat pariatur voluptate dolor ut ut incididunt ut do elit consequat exercitation officia dolore id cillum velit occaecat elit sunt anim exercitation nostrud deserunt adipisicing ea consectetur irure veniam in ea reprehenderit pariatur officia irure fugiat pariatur esse ut aute proident amet laborum eiusmod ad nulla fugiat minim aute qui ut sed sint velit aute ut consequat ea in in id esse non dolore sunt dolor incididunt cillum adipisicing dolor exercitation enim anim nostrud dolore fugiat fugiat reprehenderit velit proident pariatur duis voluptate reprehenderit adipisicing reprehenderit laboris sint dolore ex in id est dolor occaecat ex.
+            .relatives
+              h3 Questions relatives
+              .qtag Ullamco cupidatat
+              .qtag Reprehenderit pariatur ut ut eiusmod
+              .qtag Lorem ipsum nulla sunt quis
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+      .gr5 
+        h2 Frais & fiscalité
+        
+        .tab
+          input#q38(type="radio" name="questions")
+          label(for="q38") Quels sont vos différents frais ?
+          .tab-content
+            p Adipisicing ullamco sint in deserunt irure nostrud non do do aliquip sit voluptate labore dolor aliqua sint laborum anim ut in consequat amet ullamco aliquip reprehenderit fugiat consectetur ea aute do voluptate eu elit voluptate dolor nulla pariatur velit nisi dolore in ullamco esse dolore cillum voluptate non eu esse voluptate ut ut velit veniam incididunt ullamco laborum ullamco laboris occaecat sed amet pariatur ut culpa dolore ut ullamco ut commodo eu ut do et esse est reprehenderit adipisicing ea ea ea nostrud irure proident dolore magna culpa non sint velit reprehenderit ut consectetur ex in tempor laborum aliqua fugiat in mollit sunt excepteur dolore nisi cillum adipisicing ut do minim incididunt ad ea fugiat non exercitation nisi commodo qui veniam ad do fugiat culpa enim exercitation esse nulla incididunt mollit in enim incididunt adipisicing id ea quis id nostrud pariatur consequat labore laboris commodo laborum labore ut deserunt dolore voluptate eu ea sed labore fugiat laborum sint incididunt eu non id id adipisicing ut minim ut nostrud ullamco sit deserunt irure et veniam eu ex officia cillum commodo dolore laborum sed labore cupidatat consequat magna dolore amet nostrud sit occaecat aliquip ut laborum cillum sed qui ut voluptate exercitation nisi in consequat culpa incididunt in dolore enim ea commodo in dolor veniam tempor ex excepteur fugiat ut proident ut exercitation et quis sed enim ut amet cupidatat enim sint occaecat excepteur.
+            .relatives
+              h3 Questions relatives
+              .qtag Proident incididunt sunt in
+              .qtag Ut in tempor aute
+              .qtag Reprehenderit in commodo velit
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q39(type="radio" name="questions")
+          label(for="q39") Puis-je investir au Luxembourg, est-ce plus intéressant fiscalement ?
+          .tab-content
+            p Lorem ipsum enim cillum amet in dolore reprehenderit deserunt ut sed minim sed pariatur amet id id laborum commodo sunt exercitation officia non proident ut consequat amet ut qui esse cillum aliqua deserunt ad enim adipisicing nostrud occaecat eiusmod laboris labore sed duis minim nostrud occaecat est exercitation ex fugiat duis minim incididunt dolore est veniam voluptate velit duis laborum consequat fugiat sit consequat consectetur anim eu magna consectetur quis culpa occaecat est fugiat duis aute veniam do sit aute ad elit velit laborum ex ad occaecat cupidatat id exercitation labore elit officia sed sint excepteur dolore ex tempor deserunt in dolore consequat nostrud qui veniam minim id mollit proident do dolore occaecat mollit sunt in ut ut elit in ad excepteur est enim dolore nulla ullamco ea fugiat consectetur ut culpa in voluptate est labore qui id cupidatat aute dolor qui voluptate nisi in occaecat non eu in dolore ullamco in incididunt cillum labore magna aute voluptate non tempor mollit consequat aliquip ut culpa deserunt consectetur laboris veniam officia in in enim culpa exercitation in nulla dolor minim incididunt nostrud culpa pariatur exercitation et esse est ut dolore reprehenderit ut dolore fugiat laboris est ut velit dolor id irure et pariatur enim aliquip irure reprehenderit officia ut pariatur nulla laborum esse adipisicing ex culpa reprehenderit magna cillum culpa labore ad esse aute in enim nostrud pariatur dolor qui tempor velit deserunt minim duis occaecat tempor cupidatat consequat labore dolor tempor sint officia qui ut esse fugiat cillum dolor velit officia ad dolor in laboris incididunt id ea amet dolore.
+            .relatives
+              h3 Questions relatives
+              .qtag Pariatur anim culpa
+              .qtag Excepteur officia
+              .qtag Anim adipisicing
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q40(type="radio" name="questions")
+          label(for="q40") Quelles sont les différentes enveloppes et leur fiscalité ?
+          .tab-content
+            p Sit in commodo et qui duis irure sed dolore voluptate tempor do ut laborum labore laborum cupidatat ex dolor incididunt dolore officia laborum nulla ad incididunt irure esse minim ut quis est et duis ut et sit quis occaecat labore excepteur est eu labore nulla ut minim fugiat enim dolore sint deserunt esse consectetur cupidatat sed ea mollit laborum excepteur ullamco et elit incididunt magna nostrud fugiat sit incididunt officia ut dolore nostrud dolor ut labore id cupidatat anim adipisicing dolor minim nisi nostrud consequat duis nostrud deserunt pariatur dolor dolore elit dolore ea tempor incididunt consectetur anim deserunt reprehenderit enim excepteur adipisicing mollit sit laborum ut ut minim do consequat officia consectetur velit incididunt sint qui anim excepteur minim voluptate velit adipisicing ea mollit dolore dolore ut elit id qui commodo excepteur nisi excepteur aliquip cillum adipisicing consequat laborum culpa aute pariatur cupidatat dolor dolor nostrud eu exercitation ex in duis ut reprehenderit do dolor dolore sit incididunt non consectetur irure dolor cillum eu qui dolore sed deserunt consequat nisi irure nulla et sunt laboris commodo eu cillum laborum sunt amet dolore nisi non magna in nostrud velit sit ad reprehenderit aliqua quis exercitation amet nulla cillum do irure do sunt in veniam id duis qui anim labore non eiusmod ex in ullamco ut deserunt in enim id pariatur occaecat adipisicing duis magna fugiat culpa tempor nulla proident non veniam occaecat aliquip cillum incididunt magna irure et aliquip minim adipisicing in ad sed adipisicing consectetur non veniam aute irure nulla sed in enim.
+            .relatives
+              h3 Questions relatives
+              .qtag Excepteur minim dolore
+              .qtag Nisi ullamco adipisicing commodo ad
+              .qtag Incididunt est id
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q41(type="radio" name="questions")
+          label(for="q41") Comment êtes-vous rémunérés ?
+          .tab-content
+            p Irure sint dolor in velit id officia ex fugiat ea nulla duis labore veniam in ut consectetur excepteur ea amet nisi anim dolore elit qui sed adipisicing commodo quis deserunt qui ut fugiat non culpa proident consequat minim et dolor irure non magna mollit dolore magna esse incididunt fugiat consequat velit minim nulla pariatur quis ut qui officia voluptate ut duis dolor dolore do amet labore consequat excepteur sint sed culpa nulla irure laborum eiusmod aute consequat voluptate proident est eiusmod et velit minim quis amet exercitation ad ut occaecat irure ad eu consequat cupidatat dolor culpa qui minim esse est culpa in ad dolore anim fugiat aliquip laborum incididunt proident esse sed consectetur veniam ullamco amet qui ullamco tempor adipisicing incididunt enim pariatur commodo commodo enim tempor amet voluptate labore est in culpa reprehenderit voluptate laboris laboris velit excepteur adipisicing labore laboris ex aliquip deserunt est sit sit adipisicing consectetur non officia laborum reprehenderit nulla voluptate magna ut irure amet quis elit et consequat magna elit officia voluptate laboris enim nostrud in dolor incididunt mollit eu mollit commodo velit ullamco aliqua est nisi deserunt nostrud ut officia ullamco culpa mollit nostrud anim dolor fugiat cillum ut anim consequat dolore.
+            .relatives
+              h3 Questions relatives
+              .qtag Ut sint minim occaecat
+              .qtag Officia minim
+              .qtag Ex minim
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q42(type="radio" name="questions")
+          label(for="q42") Pourquoi prenez vous des commissions de performance sous mandat alors qu'il y en a déjà dans vos fonds ?
+          .tab-content
+            p Laboris nostrud proident dolor ex minim aliqua ullamco exercitation id amet dolore anim voluptate amet minim ex ut exercitation minim mollit sunt dolore ex sit ea cupidatat ad cillum nisi ad elit excepteur pariatur aliqua sunt nostrud sunt aute qui reprehenderit ut non dolor nulla veniam irure ex est deserunt non et ut sint pariatur ad sint officia cupidatat minim nostrud adipisicing dolor minim ea duis incididunt ut consectetur deserunt incididunt velit sint ad ex amet dolore exercitation amet laboris velit sit consectetur ea dolor qui cupidatat ad in id eu sint irure do ad voluptate nulla aliquip qui laboris cupidatat duis ut aliquip officia quis esse id occaecat in laborum voluptate aliquip anim consequat ut quis cupidatat excepteur cupidatat in cupidatat labore anim amet minim eiusmod adipisicing dolore commodo dolore amet dolor magna fugiat in esse cillum anim occaecat sed nostrud aliquip eiusmod qui anim do exercitation ea ut et deserunt non laborum in proident officia id quis magna sed duis eu aliquip enim in duis dolor enim labore ex voluptate in fugiat dolore ut dolore cupidatat veniam consequat excepteur quis officia cupidatat incididunt pariatur dolor officia dolor est veniam aute ex ullamco exercitation consequat culpa esse et commodo dolor deserunt sit.
+            .relatives
+              h3 Questions relatives
+              .qtag Proident proident
+              .qtag Eiusmod in sed anim sit
+              .qtag Aute minim nisi non
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+        .tab
+          input#q43(type="radio" name="questions")
+          label(for="q43") C'est quoi le prélèvement forfaitaire unique (PFU/flat tax) ?
+          .tab-content
+            p Laboris nostrud proident dolor ex minim aliqua ullamco exercitation id amet dolore anim voluptate amet minim ex ut exercitation minim mollit sunt dolore ex sit ea cupidatat ad cillum nisi ad elit excepteur pariatur aliqua sunt nostrud sunt aute qui reprehenderit ut non dolor nulla veniam irure ex est deserunt non et ut sint pariatur ad sint officia cupidatat minim nostrud adipisicing dolor minim ea duis incididunt ut consectetur deserunt incididunt velit sint ad ex amet dolore exercitation amet laboris velit sit consectetur ea dolor qui cupidatat ad in id eu sint irure do ad voluptate nulla aliquip qui laboris cupidatat duis ut aliquip officia quis esse id occaecat in laborum voluptate aliquip anim consequat ut quis cupidatat excepteur cupidatat in cupidatat labore anim amet minim eiusmod adipisicing dolore commodo dolore amet dolor magna fugiat in esse cillum anim occaecat sed nostrud aliquip eiusmod qui anim do exercitation ea ut et deserunt non laborum in proident officia id quis magna sed duis eu aliquip enim in duis dolor enim labore ex voluptate in fugiat dolore ut dolore cupidatat veniam consequat excepteur quis officia cupidatat incididunt pariatur dolor officia dolor est veniam aute ex ullamco exercitation consequat culpa esse et commodo dolor deserunt sit.
+            .relatives
+              h3 Questions relatives
+              .qtag Proident proident
+              .qtag Eiusmod in sed anim sit
+              .qtag Aute minim nisi non
+            .useful
+              h3 Cette réponse était-elle utile ?
+              button.button(type="button") Oui
+              button.button(type="button") Non
+  a.top.button(href="#") Retour en haut

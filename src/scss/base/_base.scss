@@ -1,0 +1,405 @@
+@include plumber-set-defaults( $baseline: $global-baseline);
+html {
+  height: 100%;
+}
+
+html {
+  @include fluid-type();
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  background: $white;
+  color: $black;
+  font-family: $global-font;
+  &.grid {
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1rem - 1px), rgba(#0092b7, .3) 0, rgba(#0092b7, .3) 1rem);
+  }
+}
+
+.wrapper {
+  height: 100%;
+  // max-width: $max-width;
+  padding: 0 4rem;
+  margin: 0 auto;
+  @include plumber-box($padding: 4);
+}
+
+// better default, can be changed to your convenience, comment the lines that you don't want
+* {
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+  position: relative;
+  &:before,
+  &:after {
+    box-sizing: inherit;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+}
+.search {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 4rem;
+  .datalist-arrow {
+    position:absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    z-index: 1;
+  }
+  .datalist-arrow:after {
+    content:'🔍';
+    position:absolute;
+    right:.3rem;
+    top:50%;
+    transform: translateY(-50%);
+    display:block;
+    width:5rem;
+    height:70%;
+    line-height:5rem;
+    font-size: 1.5em;
+    color:#333;
+    text-align:center;
+    background:#fff;
+    border:3px solid #fff;
+    border-radius:50%;
+    pointer-events:none;
+  }
+  input[type='search'] {
+    width: 100%;
+    font-size: 4rem;
+    line-height: 5rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    @include plumber-box(
+      $padding: 1,
+      $margin: 0 1,
+      $border: 1px
+    );
+  }
+}
+
+input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tab {
+  width: 100%;
+  
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: $white;
+    font-weight: bold;
+    cursor: pointer;
+    /* Icon */
+    &::after {
+      display: block;
+      content: "\276F";
+      width: 1em;
+      height: 100%;
+      line-height: 100%;
+      text-align: center;
+      transition: transform .3s ease;
+    }
+  }
+  &-content {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 1em;
+    background: white;
+    transition: all .35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $white;
+    cursor: pointer;
+    &:hover {
+      background: darken($white, 10%);
+    }
+  }
+}
+input:checked {
+  + label {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 200vh;
+    padding: 1em;
+  }
+}
+
+.q {
+  margin-bottom: 2rem;
+  &.selected {
+    font-weight: 700;
+  }
+  &::before {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      margin-right: 1rem;
+      text-align: center;
+    }
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  .box {
+    flex: 1 1 15%;
+    margin: 1rem;
+    padding: 2rem;
+    .q {
+      cursor: pointer;
+    }
+  }
+  .box {
+    border: 1px solid $black;
+  }
+  .box:nth-child(1) {
+    border-color: $c1;
+    h2, .see-all {
+      color: $c1;
+    }
+  }
+  .box:nth-child(2) {
+    border-color: $c2;
+    h2, .see-all {
+      color: $c2;
+    }
+  }
+  .box:nth-child(3) {
+    border-color: $c3;
+    h2, .see-all {
+      color: $c3;
+    }
+  }
+  .box:nth-child(4) {
+    border-color: $c4;
+    h2, .see-all {
+      color: $c4;
+    }
+  }
+  .box:nth-child(5) {
+    border-color: $c5;
+    h2, .see-all {
+      color: $c5;
+    }
+  }
+}
+.intro {
+  min-height: 132vh;
+  padding-bottom: 32vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: transform .6s ease;
+  &.sticky {
+    transition-duration: .3s;
+    transform: scale(.001);
+  }
+}
+.top {
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  transition: transform .6s ease;
+  transform: translateY(12rem);
+  &.sticky {
+   transform: none;
+  }
+}
+.see-all {
+    cursor: pointer;
+  }
+.content {
+  transition: margin-top .6s ease;
+  &.sticky {
+    margin-top: -88vh;
+  }
+  &-content {
+    background-color: $white;
+    width: calc(70% - 6rem);
+    display: inline-block;
+    > div {
+      margin-bottom: 5rem;
+    }
+    label {
+      padding-left: 0;
+      font-family: $header-font;
+      @include plumber($font-size: 2.5, $line-height: 3, $leading-bottom: 2, $leading-top: 2, $baseline: $header-baseline);
+    }
+    .tab {
+      margin-bottom: 3rem;
+      padding: 0 2rem;
+      p {
+        color: $black;
+      }
+      .qtag {
+        display: inline-block;
+        border-radius: 1rem;
+        color: $white;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        padding: 0 1rem;
+      }
+    }
+    .gr1 {
+      color: $c1;
+      .tab {
+        border: 1px solid $c1;
+        color: $c1;
+        .qtag {
+          background-color: $c1;
+        }
+      }
+      label {
+        color: $c1;
+      }
+    }
+    .gr2 {
+      color: $c2;
+      .tab {
+        border: 1px solid $c2;
+        color: $c2;
+        .qtag {
+          background-color: $c2;
+        }
+      }
+      label {
+        color: $c2;
+      }
+    }
+    .gr3 {
+      color: $c3;
+      .tab {
+        border: 1px solid $c3;
+        color: $c3;
+        .qtag {
+          background-color: $c3;
+        }
+      }
+      label {
+        color: $c3;
+      }
+    }
+    .gr4 {
+      color: $c4;
+      .tab {
+        border: 1px solid $c4;
+        color: $c4;
+        .qtag {
+          background-color: $c4;
+        }
+      }
+      label {
+        color: $c4;
+      }
+    }
+    .gr5 {
+      color: $c5;
+      .tab {
+        border: 1px solid $c5;
+        color: $c5;
+        .qtag {
+          background-color: $c5;
+        }
+      }
+      label {
+        color: $c5;
+      }
+    }
+  }
+
+  .questionsbar {
+    // max-height: calc(100vh - 5rem);
+    
+    background-color: $white;
+    .q {
+      cursor: pointer;
+    }
+    input:checked {
+      ~ .tab-content {
+        max-height: 50vh;
+        overflow: scroll;
+        padding: 1em;
+      }
+    }
+    vertical-align: top;
+    position: sticky;
+    top: 5rem;
+    .tab:nth-child(1) {
+      color: $c1;
+      .selected {
+        background-color: $c1;
+        color: $white;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+      
+    }
+    .tab:nth-child(2) {
+      color: $c2;
+      .selected {
+        background-color: $c2;
+        color: $white;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+      
+    }
+    .tab:nth-child(3) {
+      color: $c3;
+      .selected {
+        background-color: $c3;
+        color: $white;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+      
+    }
+    .tab:nth-child(4) {
+      color: $c4;
+      .selected {
+        background-color: $c4;
+        color: $white;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+      
+    }
+    .tab:nth-child(5) {
+      color: $c5;
+      .selected {
+        background-color: $c5;
+        color: $white;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+      
+    }
+    width: 30%;
+    display: inline-block;
+    margin-right: 6rem;
+    label {
+      padding-left: 0;
+      font-family: $header-font;
+      @include plumber($font-size: 2.5, $leading-top: 4, $baseline: $header-baseline);
+    }
+  }
+}
